@@ -252,10 +252,10 @@ class EntrustUserTest extends PHPUnit_Framework_TestCase
         $user->shouldReceive('hasRole')
             ->with(m::anyOf($nonUserRoleNameA, $nonUserRoleNameB), m::anyOf(true, false))
             ->andReturn(false);
-        $user->shouldReceive('can')
+        $user->shouldReceive('permission')
             ->with(m::anyOf($userPermNameA, $userPermNameB, $userPermNameC), m::anyOf(true, false))
             ->andReturn(true);
-        $user->shouldReceive('can')
+        $user->shouldReceive('permission')
             ->with(m::anyOf($nonUserPermNameA, $nonUserPermNameB), m::anyOf(true, false))
             ->andReturn(false);
 
@@ -376,10 +376,10 @@ class EntrustUserTest extends PHPUnit_Framework_TestCase
         $user->shouldReceive('hasRole')
             ->with(m::anyOf($nonUserRoleNameA, $nonUserRoleNameB), m::anyOf(true, false))
             ->andReturn(false);
-        $user->shouldReceive('can')
+        $user->shouldReceive('permission')
             ->with(m::anyOf($userPermNameA, $userPermNameB, $userPermNameC), m::anyOf(true, false))
             ->andReturn(true);
-        $user->shouldReceive('can')
+        $user->shouldReceive('permission')
             ->with(m::anyOf($nonUserPermNameA, $nonUserPermNameB), m::anyOf(true, false))
             ->andReturn(false);
 
@@ -538,10 +538,10 @@ class EntrustUserTest extends PHPUnit_Framework_TestCase
         $user->shouldReceive('hasRole')
             ->with(m::anyOf($nonUserRoleNameA, $nonUserRoleNameB), m::anyOf(true, false))
             ->andReturn(false);
-        $user->shouldReceive('can')
+        $user->shouldReceive('permission')
             ->with(m::anyOf($userPermNameA, $userPermNameB, $userPermNameC), m::anyOf(true, false))
             ->andReturn(true);
-        $user->shouldReceive('can')
+        $user->shouldReceive('permission')
             ->with(m::anyOf($nonUserPermNameA, $nonUserPermNameB), m::anyOf(true, false))
             ->andReturn(false);
 
@@ -714,10 +714,10 @@ class EntrustUserTest extends PHPUnit_Framework_TestCase
         $user->shouldReceive('hasRole')
             ->with('NonUserRoleB', m::anyOf(true, false))
             ->andReturn(false);
-        $user->shouldReceive('can')
+        $user->shouldReceive('permission')
             ->with(m::anyOf('user_can_a', 'user_can_b', 'user_can_c'), m::anyOf(true, false))
             ->andReturn(true);
-        $user->shouldReceive('can')
+        $user->shouldReceive('permission')
             ->with('user_cannot_b', m::anyOf(true, false))
             ->andReturn(false);
 
@@ -790,10 +790,10 @@ class EntrustUserTest extends PHPUnit_Framework_TestCase
         $user->shouldReceive('hasRole')
             ->with(m::anyOf($nonUserRoleNameA, $nonUserRoleNameB), m::anyOf(true, false))
             ->andReturn(false);
-        $user->shouldReceive('can')
+        $user->shouldReceive('permission')
             ->with(m::anyOf($userPermNameA, $userPermNameB, $userPermNameC), m::anyOf(true, false))
             ->andReturn(true);
-        $user->shouldReceive('can')
+        $user->shouldReceive('permission')
             ->with(m::anyOf($nonUserPermNameA, $nonUserPermNameB), m::anyOf(true, false))
             ->andReturn(false);
 
@@ -899,7 +899,7 @@ class EntrustUserTest extends PHPUnit_Framework_TestCase
         */
         $user->shouldReceive('hasRole')
             ->times(3);
-        $user->shouldReceive('can')
+        $user->shouldReceive('permission')
             ->times(3);
 
         /*

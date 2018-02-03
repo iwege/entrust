@@ -142,9 +142,9 @@ class EntrustTest extends PHPUnit_Framework_TestCase
         | Assertion
         |------------------------------------------------------------
         */
-        $this->assertTrue($entrust->can('user_can'));
-        $this->assertFalse($entrust->can('user_cannot'));
-        $this->assertFalse($entrust->can('any_permission'));
+        $this->assertTrue($entrust->permission('user_can'));
+        $this->assertFalse($entrust->permission('user_cannot'));
+        $this->assertFalse($entrust->permission('any_permission'));
     }
 
     public function testUser()
